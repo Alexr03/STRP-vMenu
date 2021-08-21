@@ -429,6 +429,7 @@ namespace vMenuClient
                 MenuController.AddSubmenu(Menu, WorldSubmenu);
 
                 // Create all (sub)menus.
+                Log("VMENU - CREATING SUB MENUS");
                 CreateSubmenus();
 
                 if (!GetSettingsBool(Setting.vmenu_disable_player_stats_setup))
@@ -455,6 +456,23 @@ namespace vMenuClient
                 MenuController.DisableMenuButtons = true;
                 MenuController.DontOpenAnyMenu = true;
                 MenuController.MenuToggleKey = (Control)(-1); // disables the menu toggle key
+                //
+                // Menu = new Menu(Game.Player.Name, "Main Menu");
+                // PlayerSubmenu = new Menu(Game.Player.Name, "Player Related Options");
+                // VehicleSubmenu = new Menu(Game.Player.Name, "Vehicle Related Options");
+                // WorldSubmenu = new Menu(Game.Player.Name, "World Options");
+                //
+                // // Add the main menu to the menu pool.
+                // MenuController.AddMenu(Menu);
+                // MenuController.MainMenu = Menu;
+                //
+                // MenuController.AddSubmenu(Menu, PlayerSubmenu);
+                // MenuController.AddSubmenu(Menu, VehicleSubmenu);
+                // MenuController.AddSubmenu(Menu, WorldSubmenu);
+                //
+                // // Create all (sub)menus.
+                // Log("VMENU - CREATING SUB MENUS2");
+                // CreateSubmenus();
             }
         }
 
@@ -770,7 +788,7 @@ namespace vMenuClient
                 };
                 AddMenu(Menu, menu, button);
             }
-
+            
             {
                 RecordingMenu = new Recording();
                 Menu menu = RecordingMenu.GetMenu();
